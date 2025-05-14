@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>MiyaharaNatsumi</title>
+        <meta name="description" content="宮原七海のポートフォリオサイトです。">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--リセットCSS-->
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <!--Googleフォント-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Actor&family=Bilbo&family=Montserrat:ital,wght@0,200;1,200&family=Noto+Sans+JP:wght@100..900&family=Satisfy&display=swap" rel="stylesheet">
+        <!--オリジナルCSS-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <section class="contents">
+            <div class="work-about">
+                <h2 class="title">Other Contents</h2>
+             <p class="work-text">
+                ポスターや名刺デザインの他、趣味のネイルや絵をまとめています。<br>
+             </p>
+
+             <p class="using work-text">
+                ● Using<br>
+               Illustrator/ etc
+             </p>
+            </div>
+
+            <div class="work-images work-about">
+                <button class="prev">
+                    <img src="images/arrowL.png" alt="左矢印">
+                </button>
+                
+                <div class="slider-container">
+                    <div class="slider-wrapper">
+                        <img src="images/img05.png" alt="写真１" class="slider-img">
+                        <img src="images/img06.png" alt="写真２" class="slider-img">
+                        <img src="images/img10.png" alt="写真6" class="slider-img">
+                        <img src="images/img07.png" alt="写真3" class="slider-img">
+                        <img src="images/img08.JPG" alt="写真4" class="slider-img">
+                        <img src="images/img11.jpeg" alt="写真７" class="slider-img">
+                        <img src="images/img09.JPG" alt="写真5" class="slider-img">
+                    </div>
+                </div>
+
+                <button class="next">
+                    <img src="images/arrowR.png" alt="右矢印">
+                </button>
+            
+            </div>
+            
+            <div>
+                <a class="btn" href="index.html">BackHome</a>
+            </div>
+        </section>
+       
+    </body>
+
+    <script>
+        const sliderWrapper = document.querySelector(".slider-wrapper");
+        const prevButton = document.querySelector(".prev");
+        const nextButton = document.querySelector(".next");
+    
+        const images = document.querySelectorAll(".slider-img");
+        const imageWidth = 300 + 20; // 300px + 10px margin * 2
+        let currentIndex = 0;
+        const imagesPerView = 3;
+    
+        function updateSlider() {
+            sliderWrapper.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+        }
+    
+        prevButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+    
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < images.length - imagesPerView) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+    </script>
+
+   
+</html>
