@@ -52,7 +52,6 @@ p{
     width: 60vw;
     height: 80vh;
     object-fit: cover;
-    filter: brightness(70%);
 }
 
 .top-right{
@@ -234,4 +233,97 @@ p{
     border: 2px solid rgb(82, 82, 82);
     padding: 5px 15px;
     border-radius: 10px;
+}
+
+@media (max-width: 480px){
+    body, html {
+        overflow-x: hidden; /* 横方向のスクロールを無効化 */
+    }
+    
+    body{
+        font-family: 'Bilbo', cursive;
+        color: rgb(82, 82, 82);
+    }
+
+    .top-img{
+        position: absolute;
+        left: 20px;
+        width: 60vw;
+        height: 80vh;
+        object-fit: cover;
+    }
+
+    .page-title{
+        display: inline-block;
+        position: relative;
+        left: 70px;
+    }
+
+    .about{
+        height: 100vh;
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-text{
+        position: relative;
+        left: 20px;
+        line-height: 4;
+        max-width: 80%;
+    }
+
+    .grid{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    .contents{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        max-width: 400px;
+    }
+    
+
+    .slider-container {
+        overflow: hidden;
+        width: 300px;
+        max-width: 480px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .slider-img {
+        width: 100%; /* スマホでは全幅表示 */
+        margin: 5px;
+    }
+
+    .prev {
+        left: -45px;
+    }
+    
+    .next {
+        right: -45px;
+    }
+    
+    .prev img, .next img {
+        width: 13vw;
+        height: auto;
+    }
+
+    .work-movie iframe{
+        width: 400px;
+        height: 250px;
+        max-width: 480px;
+    }
+
+
+    
 }

@@ -72,14 +72,26 @@
         const sliderWrapper = document.querySelector(".slider-wrapper");
         const prevButton = document.querySelector(".prev");
         const nextButton = document.querySelector(".next");
-    
+        
         const images = document.querySelectorAll(".slider-img");
         const imageWidth = 300 + 20; // 300px + 10px margin * 2
         let currentIndex = 0;
-        const imagesPerView = 3;
+        let imagesPerView = 3; // デフォルトは3枚
     
+        // 画面幅に応じて表示枚数を変更
+        function updateImagesPerView() {
+            if (window.innerWidth <= 480) {
+                imagesPerView = 1; // スマホサイズでは1枚表示
+            } else {
+                imagesPerView = 3; // PCサイズでは3枚表示
+            }
+            updateSlider(); // 表示を更新
+        }
+    
+        // スライダーの表示を更新
         function updateSlider() {
             sliderWrapper.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+            sliderWrapper.style.transition = "transform 0.3s ease"; // スムーズなスライド
         }
     
         prevButton.addEventListener("click", () => {
@@ -95,7 +107,12 @@
                 updateSlider();
             }
         });
+    
+        // 初期設定
+        updateImagesPerView();
+        window.addEventListener("resize", updateImagesPerView);
     </script>
+    
     
 
     
