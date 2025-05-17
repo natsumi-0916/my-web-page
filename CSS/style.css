@@ -2,6 +2,13 @@
 
 /*共通部分*/
 
+@font-face {
+    font-family: 'Icingsoda';
+    src: url(/my-web-page/font/Icing\ soda2.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html{
     font-size: 100%;
     background-color: rgb(241, 241, 234);
@@ -26,7 +33,7 @@ h1{
 }
 
 h2{
-    font-size: 3rem;
+    font-size: 5rem;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
@@ -34,6 +41,10 @@ h2{
 
 p{
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-japan{
+    font-family: 'Icingsoda';
 }
 
 .top{
@@ -154,10 +165,6 @@ p{
     height: auto;
 }
 
-.work-about {
-    margin-top: 10vh;
-}
-
 .work-text {
     margin-top: 5vh;
 }
@@ -178,6 +185,7 @@ p{
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 5vh;
 }
 
 .slider-wrapper {
